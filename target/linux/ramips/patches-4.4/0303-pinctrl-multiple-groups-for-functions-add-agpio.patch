@@ -1,6 +1,6 @@
 diff -Naur a/arch/mips/include/asm/mach-ralink/pinmux.h b/arch/mips/include/asm/mach-ralink/pinmux.h
---- a/arch/mips/include/asm/mach-ralink/pinmux.h	2016-07-04 10:15:04.232391006 -0500
-+++ b/arch/mips/include/asm/mach-ralink/pinmux.h	2016-07-04 09:43:11.872082109 -0500
+--- a/arch/mips/include/asm/mach-ralink/pinmux.h	2016-11-28 19:21:48.169669276 -0600
++++ b/arch/mips/include/asm/mach-ralink/pinmux.h	2016-11-28 19:22:39.766732111 -0600
 @@ -33,6 +33,7 @@
  	int *pins;
  
@@ -10,84 +10,9 @@ diff -Naur a/arch/mips/include/asm/mach-ralink/pinmux.h b/arch/mips/include/asm/
  
  	int enabled;
 diff -Naur a/arch/mips/ralink/mt7620.c b/arch/mips/ralink/mt7620.c
---- a/arch/mips/ralink/mt7620.c	2016-07-04 10:15:52.649309331 -0500
-+++ b/arch/mips/ralink/mt7620.c	2016-07-04 09:43:52.872876357 -0500
-@@ -176,7 +176,7 @@
- 
- static struct rt2880_pmx_func spis_grp_mt7628[] = {
- 	FUNC("pwm", 3, 14, 4),
--	FUNC("utif", 2, 14, 4),
-+	FUNC("util", 2, 14, 4),
- 	FUNC("gpio", 1, 14, 4),
- 	FUNC("spis", 0, 14, 4),
- };
-@@ -190,28 +190,28 @@
- 
- static struct rt2880_pmx_func p4led_kn_grp_mt7628[] = {
- 	FUNC("jtag", 3, 30, 1),
--	FUNC("utif", 2, 30, 1),
-+	FUNC("util", 2, 30, 1),
- 	FUNC("gpio", 1, 30, 1),
- 	FUNC("p4led_kn", 0, 30, 1),
- };
- 
- static struct rt2880_pmx_func p3led_kn_grp_mt7628[] = {
- 	FUNC("jtag", 3, 31, 1),
--	FUNC("utif", 2, 31, 1),
-+	FUNC("util", 2, 31, 1),
- 	FUNC("gpio", 1, 31, 1),
- 	FUNC("p3led_kn", 0, 31, 1),
- };
- 
- static struct rt2880_pmx_func p2led_kn_grp_mt7628[] = {
- 	FUNC("jtag", 3, 32, 1),
--	FUNC("utif", 2, 32, 1),
-+	FUNC("util", 2, 32, 1),
- 	FUNC("gpio", 1, 32, 1),
- 	FUNC("p2led_kn", 0, 32, 1),
- };
- 
- static struct rt2880_pmx_func p1led_kn_grp_mt7628[] = {
- 	FUNC("jtag", 3, 33, 1),
--	FUNC("utif", 2, 33, 1),
-+	FUNC("util", 2, 33, 1),
- 	FUNC("gpio", 1, 33, 1),
- 	FUNC("p1led_kn", 0, 33, 1),
- };
-@@ -232,28 +232,28 @@
- 
- static struct rt2880_pmx_func p4led_an_grp_mt7628[] = {
- 	FUNC("jtag", 3, 39, 1),
--	FUNC("utif", 2, 39, 1),
-+	FUNC("util", 2, 39, 1),
- 	FUNC("gpio", 1, 39, 1),
- 	FUNC("p4led_an", 0, 39, 1),
- };
- 
- static struct rt2880_pmx_func p3led_an_grp_mt7628[] = {
- 	FUNC("jtag", 3, 40, 1),
--	FUNC("utif", 2, 40, 1),
-+	FUNC("util", 2, 40, 1),
- 	FUNC("gpio", 1, 40, 1),
- 	FUNC("p3led_an", 0, 40, 1),
- };
- 
- static struct rt2880_pmx_func p2led_an_grp_mt7628[] = {
- 	FUNC("jtag", 3, 41, 1),
--	FUNC("utif", 2, 41, 1),
-+	FUNC("util", 2, 41, 1),
- 	FUNC("gpio", 1, 41, 1),
- 	FUNC("p2led_an", 0, 41, 1),
- };
- 
- static struct rt2880_pmx_func p1led_an_grp_mt7628[] = {
- 	FUNC("jtag", 3, 42, 1),
--	FUNC("utif", 2, 42, 1),
-+	FUNC("util", 2, 42, 1),
- 	FUNC("gpio", 1, 42, 1),
- 	FUNC("p1led_an", 0, 42, 1),
- };
-@@ -272,7 +272,16 @@
+--- a/arch/mips/ralink/mt7620.c	2016-11-28 21:08:27.669738080 -0600
++++ b/arch/mips/ralink/mt7620.c	2016-11-28 21:11:11.177069522 -0600
+@@ -276,7 +276,16 @@
  	FUNC("wled_an", 0, 44, 1),
  };
  
@@ -104,7 +29,7 @@ diff -Naur a/arch/mips/ralink/mt7620.c b/arch/mips/ralink/mt7620.c
  
  #define MT7628_GPIO_MODE_P4LED_KN	58
  #define MT7628_GPIO_MODE_P3LED_KN	56
-@@ -301,6 +310,7 @@
+@@ -305,6 +314,7 @@
  #define MT7628_GPIO_MODE_CS1		4
  #define MT7628_GPIO_MODE_SPIS		2
  #define MT7628_GPIO_MODE_GPIO		0
@@ -112,7 +37,7 @@ diff -Naur a/arch/mips/ralink/mt7620.c b/arch/mips/ralink/mt7620.c
  
  static struct rt2880_pmx_group mt7628an_pinmux_data[] = {
  	GRP_G("pwm1", pwm1_grp_mt7628, MT7628_GPIO_MODE_MASK,
-@@ -353,6 +363,8 @@
+@@ -357,6 +367,8 @@
  				1, MT7628_GPIO_MODE_P3LED_KN),
  	GRP_G("p4led_kn", p4led_kn_grp_mt7628, MT7628_GPIO_MODE_MASK,
  				1, MT7628_GPIO_MODE_P4LED_KN),
@@ -121,7 +46,7 @@ diff -Naur a/arch/mips/ralink/mt7620.c b/arch/mips/ralink/mt7620.c
  	{ 0 }
  };
  
-@@ -526,8 +538,8 @@
+@@ -530,8 +542,8 @@
  		periph_rate = MHZ(40);
  		pcmi2s_rate = MHZ(480);
  
@@ -133,8 +58,8 @@ diff -Naur a/arch/mips/ralink/mt7620.c b/arch/mips/ralink/mt7620.c
  		cpu_pll_rate = mt7620_get_cpu_pll_rate(xtal_rate);
  		pll_rate = mt7620_get_pll_rate(xtal_rate, cpu_pll_rate);
 diff -Naur a/drivers/pinctrl/pinctrl-rt2880.c b/drivers/pinctrl/pinctrl-rt2880.c
---- a/drivers/pinctrl/pinctrl-rt2880.c	2016-07-04 10:16:13.173698862 -0500
-+++ b/drivers/pinctrl/pinctrl-rt2880.c	2016-07-04 09:44:56.418106841 -0500
+--- a/drivers/pinctrl/pinctrl-rt2880.c	2016-11-28 19:29:56.720430496 -0600
++++ b/drivers/pinctrl/pinctrl-rt2880.c	2016-11-28 19:30:09.412708788 -0600
 @@ -28,6 +28,7 @@
  
  #define SYSC_REG_GPIO_MODE	0x60
