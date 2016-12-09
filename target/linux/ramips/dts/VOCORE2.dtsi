@@ -76,7 +76,7 @@
 		reg = <0>;
 		linux,modalias = "m25p80";
 		spi-max-frequency = <40000000>;
-		m25p,chunked-io = <31>;
+		m25p,chunked-io = <32>;
 
 		partition@0 {
 			label = "u-boot";
