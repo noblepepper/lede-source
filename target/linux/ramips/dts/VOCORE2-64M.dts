@@ -7,5 +7,9 @@
 		device_type = "memory";
 		reg = <0x0 0x4000000>;
 	};
+	sdhci@10130000 {
+		mediatek,cd-low;
+		status = "okay";
+	};
 };
 
