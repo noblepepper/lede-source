@@ -24,7 +24,7 @@ define Device/vocore2
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   SUPPORTED_DEVICES := vocore2
   DEVICE_TITLE := Vocore VoCore 2
-  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev
+  DEVICE_PACKAGES := luci luci-theme-openwrt
 endef
 TARGET_DEVICES += vocore2
 
@@ -33,7 +33,7 @@ define Device/vocore2-beta
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   SUPPORTED_DEVICES := vocore2
   DEVICE_TITLE := Vocore VoCore 2 Beta
-  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev
+  DEVICE_PACKAGES := luci luci-theme-openwrt kmod-ledtrig-usbdev
 endef
 TARGET_DEVICES += vocore2-beta
 
@@ -42,7 +42,7 @@ define Device/vocore2-lite
   IMAGE_SIZE := $(ralink_default_fw_size_8M)
   SUPPORTED_DEVICES := vocore2
   DEVICE_TITLE := Vocore VoCore 2 Lite
-  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev
+  DEVICE_PACKAGES :=  luci luci-theme-openwrt 
 endef
 TARGET_DEVICES += vocore2-lite
 
@@ -51,7 +51,7 @@ define Device/vocore2-ultimate
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   SUPPORTED_DEVICES := vocore2
   DEVICE_TITLE := Vocore VoCore 2 Ultimate (or airplay)
-  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev mjpeg-streamer samba madplay airplay-sync
+  DEVICE_PACKAGES := kmod-usb2 kmod-fs-ext4 kmod-fs-msdos kmod-usb-storage kmod-usb-storage-extras luci luci-theme-openwrt block-mount kmod-usb-ohci kmod-ledtrig-usbdev mjpeg-streamer samba madplay airplay-sync
 endef
 TARGET_DEVICES += vocore2-ultimate
 
