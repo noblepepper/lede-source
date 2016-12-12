@@ -19,41 +19,41 @@ define Device/miwifi-nano
 endef
 TARGET_DEVICES += miwifi-nano
 
-define Device/vocore2-64M
-  DTS := VOCORE2-64M
+define Device/vocore2
+  DTS := VOCORE2
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   SUPPORTED_DEVICES := vocore2
-  DEVICE_TITLE := Vocore VoCore 2 64M
+  DEVICE_TITLE := Vocore VoCore 2
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev
 endef
-TARGET_DEVICES += vocore2-64M
+TARGET_DEVICES += vocore2
 
-define Device/vocore2-64M-SD
-  DTS := VOCORE2-64M-SD
+define Device/vocore2-beta
+  DTS := VOCORE2-beta
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   SUPPORTED_DEVICES := vocore2
-  DEVICE_TITLE := Vocore VoCore 2 64M w SD
+  DEVICE_TITLE := Vocore VoCore 2 Beta
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev
 endef
-TARGET_DEVICES += vocore2-64M-SD
+TARGET_DEVICES += vocore2-beta
 
-define Device/vocore2-128M
-  DTS := VOCORE2-128M
-  IMAGE_SIZE := $(ralink_default_fw_size_16M)
+define Device/vocore2-lite
+  DTS := VOCORE2-lite
+  IMAGE_SIZE := $(ralink_default_fw_size_8M)
   SUPPORTED_DEVICES := vocore2
-  DEVICE_TITLE := Vocore VoCore 2 128M
+  DEVICE_TITLE := Vocore VoCore 2 Lite
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev
 endef
-TARGET_DEVICES += vocore2-128M
+TARGET_DEVICES += vocore2-lite
 
-define Device/vocore2-128M-SD
-  DTS := VOCORE2-128M-SD
+define Device/vocore2-ultimate
+  DTS := VOCORE2-ultimate
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   SUPPORTED_DEVICES := vocore2
-  DEVICE_TITLE := Vocore VoCore 2 128M w SD
-  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev
+  DEVICE_TITLE := Vocore VoCore 2 Ultimate (or airplay)
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-ledtrig-usbdev mjpeg-streamer samba madplay airplay-sync
 endef
-TARGET_DEVICES += vocore2-128M-SD
+TARGET_DEVICES += vocore2-ultimate
 
 define Device/wl-wn575a3
   DTS := WL-WN575A3
