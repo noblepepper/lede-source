@@ -29,16 +29,16 @@ endef
 TARGET_DEVICES += vocore2
 
 define Device/vocore2-beta
-  DTS := VOCORE2-beta
+  DTS := VOCORE2-BETA
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   SUPPORTED_DEVICES := vocore2
   DEVICE_TITLE := Vocore VoCore 2 Beta
-  DEVICE_PACKAGES := luci luci-theme-openwrt kmod-ledtrig-usbdev
+  DEVICE_PACKAGES := luci luci-theme-openwrt
 endef
 TARGET_DEVICES += vocore2-beta
 
 define Device/vocore2-lite
-  DTS := VOCORE2-lite
+  DTS := VOCORE2-LITE
   IMAGE_SIZE := $(ralink_default_fw_size_8M)
   SUPPORTED_DEVICES := vocore2
   DEVICE_TITLE := Vocore VoCore 2 Lite
@@ -47,7 +47,7 @@ endef
 TARGET_DEVICES += vocore2-lite
 
 define Device/vocore2-ultimate
-  DTS := VOCORE2-ultimate
+  DTS := VOCORE2-ULTIMATE
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   SUPPORTED_DEVICES := vocore2
   DEVICE_TITLE := Vocore VoCore 2 Ultimate (or airplay)
