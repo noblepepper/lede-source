@@ -86,6 +86,7 @@ ramips_setup_interfaces()
 	psg1218|\
 	sap-g3200u3|\
 	sk-wb8|\
+	vocore2|\
 	vr500|\
 	wf-2881|\
 	witi|\
