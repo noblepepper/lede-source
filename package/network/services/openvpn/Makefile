@@ -9,12 +9,12 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openvpn
 
-PKG_VERSION:=2.4_rc2
-PKG_RELEASE:=1
+PKG_VERSION:=2.4.0
+PKG_RELEASE:=2
 
 PKG_SOURCE_URL:=http://swupdate.openvpn.net/community/releases
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
-PKG_HASH:=3e5dbfda2c1c941bc61e5e067601b31f578ad4cdf3683e569014e18c2cc6e2e9
+PKG_HASH:=6f23ba49a1dbeb658f49c7ae17d9ea979de6d92c7357de3d55cd4525e1b2f87e
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
 
@@ -34,6 +34,7 @@ define Package/openvpn/Default
   MENU:=1
   DEPENDS:=+kmod-tun +OPENVPN_$(1)_ENABLE_LZO:liblzo +OPENVPN_$(1)_ENABLE_IPROUTE2:ip $(3)
   VARIANT:=$(1)
+  PROVIDES:=openvpn
   MAINTAINER:=Mirko Vogt <mirko@openwrt.org>
 endef
 
